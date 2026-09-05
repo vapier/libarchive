@@ -1,0 +1,50 @@
+:root {
+  --fg-color: #111;
+  --bg-color: #eee;
+  --border-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg-color: #eee;
+    --bg-color: #111;
+    --border-color: white;
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+pre#log {
+  border: 1px var(--border-color) solid;
+  padding: 0.5em;
+}
+
+a.open,
+a.download {
+  background-color: #eee;
+  border: 1px var(--border-color) solid;
+  margin-right: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-decoration: none;
+}
+a.download::before {
+  content: "⤓";
+}
+a.open::before {
+  content: "⤒";
+}
+
+span.size {
+  display: inline-block;
+  margin-right: 2em;
+  min-width: 10em;
+  text-align: right;
+}
+
+span.size::after {
+  content: " bytes";
+}
